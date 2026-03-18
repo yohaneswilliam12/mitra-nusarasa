@@ -59,7 +59,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src={'/logo.png'} width={90} height={20} alt="Agemon Logo" />
+            <Image src={'/logo.png'} width={90} height={20} alt="Agemon Logo" unoptimized />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
