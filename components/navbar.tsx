@@ -64,7 +64,7 @@ export const Navbar = () => {
               top: 0,
               behavior: "smooth",
             });
-            window.history.replaceState(null, '', '/');
+            window.history.replaceState(null, '', window.location.pathname);
             setHash('');
           }}>
             <Image src={'./logo.png'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
