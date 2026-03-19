@@ -58,8 +58,16 @@ export const Navbar = () => {
     <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={isOpen} onMenuOpenChange={setOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src={'./logo.png'} width={90} height={20} alt="Agemon Logo" />
+          <NextLink className="flex justify-start items-center gap-1" href="#" onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            window.history.replaceState(null, '', '/');
+            setHash('');
+          }}>
+            <Image src={'./logo.png'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -74,8 +82,8 @@ export const Navbar = () => {
                 href={item.href}
                 onClick={() => {
                   item.href.startsWith('/#') ?
-                  setHash(item.href.replace('/#', ''))
-                  : setHash('')
+                    setHash(item.href.replace('/#', ''))
+                    : setHash('')
                 }}
               >
                 {item.label}
