@@ -20,23 +20,5 @@ export const siteConfig = {
       label: "Tentang Kami",
       href: "./#tentang-kami",
     },
-  ],
-  navMenuItems: [
-    {
-      label: "Beranda",
-      href: "./#beranda",
-    },
-    {
-      label: "Varian",
-      href: "./#varian",
-    },
-    {
-      label: "Kemitraan",
-      href: "./#kemitraan",
-    },
-    {
-      label: "Tentang Kami",
-      href: "./#tentang-kami",
-    },
   ]
 };

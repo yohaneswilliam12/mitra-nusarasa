@@ -8,7 +8,7 @@ import Varian from "./_components/varian";
 
 export default async function Home() {
   return (<>
-    <section className="flex flex-col items-center justify-center">
+    <section id="beranda">
       {/* <Canvas /> */}
       <Beranda />
     </section>

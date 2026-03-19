@@ -76,13 +76,13 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  item.href.replace('/#', '') === hash ? "text-primary font-medium" : "",
+                  item.href.replace('./#', '') === hash ? "text-primary font-medium" : "",
                 )}
                 color="foreground"
                 href={item.href}
                 onClick={() => {
-                  item.href.startsWith('/#') ?
-                    setHash(item.href.replace('/#', ''))
+                  item.href.startsWith('./#') ?
+                    setHash(item.href.replace('./#', ''))
                     : setHash('')
                 }}
               >
@@ -114,12 +114,17 @@ export const Navbar = () => {
           {searchInput}
         </div>
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  item.href.startsWith('./#') ?
+                    setHash(item.href.replace('./#', ''))
+                    : setHash('')
+                }}
                 color={
-                  item.href.replace('/#', '') === hash ? "primary" : "foreground"
+                  item.href.replace('./#', '') === hash ? "primary" : "foreground"
                 }
                 href={item.href}
                 size="lg"
