@@ -15,7 +15,7 @@ export default function Beranda() {
             <Image src={'./slogan.png'} width={1200} height={1394} alt="slogan" priority className={`transition-all duration-500 ease-out w-164 mx-auto my-8 ${loaded ? 'scale-100 opacity-100 blur-none' : 'scale-110 opacity-0 blur-md'}`} />
         </Parallax>
         <div className="py-8 flex flex-col gap-2">
-            <div className="flex gap-1 font-bold text-5xl justify-center text-[rgb(231,80,70)]">
+            <div className="flex gap-1 font-bold text-5xl justify-center text-[rgb(255,58,65)]">
                 <Reveal>Renyah</Reveal>
                 <Reveal className="delay-100">di</Reveal>
                 <Reveal className="delay-200">luar,</Reveal>
@@ -23,7 +23,7 @@ export default function Beranda() {
                 <Reveal className="delay-400">di</Reveal>
                 <Reveal className="delay-500">dalam</Reveal>
             </div>
-            <div className="flex gap-1 font-bold text-4xl justify-center text-[rgb(231,80,70)]">
+            <div className="flex gap-1 font-bold text-4xl justify-center text-[rgb(255,58,65)]">
                 <Reveal className="delay-600">Lumer</Reveal>
                 <Reveal className="delay-700">dengan</Reveal>
                 <Reveal className="delay-800">krim</Reveal>
