@@ -77,19 +77,21 @@ const Item = (props: ItemVariants) => {
     useEffect(() => {
         setTheme(resolvedTheme);
     }, [resolvedTheme]);
-    return <Card className="py-4">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2">
+    return <Card className="py-4 overflow-visible">
+        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2 overflow-auto">
             <p className={`transition-all text-xl md:text-2xl font-bold`} style={{ color: theme === 'dark' ? props.colorDark : props.color }}>{props.name}</p>
             <small className="text-default-500 min-h-20">{props.description}</small>
         </CardHeader>
-        <CardBody className="overflow-visible py-2 h-60">
-            <Image
-                alt={props.name}
-                className="w-80 m-auto"
-                src={props.image}
-                width={1218}
-                height={760}
-            />
+        <CardBody className="overflow-visible py-0 h-50">
+            <Parallax speed={2} className="my-auto">
+                <Image
+                    alt={props.name}
+                    className="w-80 m-auto"
+                    src={props.image}
+                    width={1218}
+                    height={760}
+                />
+            </Parallax>
         </CardBody>
     </Card>
 }

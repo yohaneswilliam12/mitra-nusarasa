@@ -20,15 +20,15 @@ export default function TentangKami() {
                 step={25}
             />
         </div>
-        <div className="grid grid-cols-8 gap-4 mx-8">
-            <div className="col-span-3 m-auto italic text-2xl text-center flex flex-col">
+        <div className="md:grid md:grid-cols-8 gap-4 mx-8">
+            <div className="col-span-3 mb-16 md:my-auto italic text-2xl text-center flex flex-col">
                 <RevealText
-                    text={['"シンプルに、', '深い', '味わい。"']}
+                    text={['"シンプル、', '味わい豊か。"']}
                     startDelay={0}
                     step={50}
                 />
                 <RevealText
-                    text={'"Sederhana, namun penuh rasa."'}
+                    text={'"Sederhana, penuh rasa."'}
                     className="text-lg font-light"
                     startDelay={150}
                     step={25}

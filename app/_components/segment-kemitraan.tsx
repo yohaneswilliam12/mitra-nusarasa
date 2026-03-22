@@ -38,8 +38,8 @@ const highlights: CardHighlights[] = [
     {
         icon: 'Phone',
         label: 'Konsultasi',
-        color: 'rgb(160,221,35)',
-        colorDark: 'rgb(100,255,70)',
+        color: 'rgb(85,137,97)',
+        colorDark: 'rgb(85,255,120)',
     }
 ]
 
