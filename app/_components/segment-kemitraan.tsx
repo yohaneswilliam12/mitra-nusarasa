@@ -95,8 +95,8 @@ export default function Kemitraan() {
             </div>
             <div className="flex mx-8">
                 <MoveUpReveal className="flex-1 delay-450">
-                    <Card className="flex flex-row items-center gap-8 p-4">
-                        <div className="transition-all text-md md:text-lg flex-1">
+                    <Card className="md:flex md:flex-row items-center gap-4 p-4">
+                        <div className="transition-all text-md text-center md:text-left md:text-lg flex-1">
                             <RevealText
                                 text="Dapatkan Penawaran Spesial untuk Menjadi Mitra Kami dan Mulai Kembangkan Bisnis Bersama Kami."
                                 startDelay={100}

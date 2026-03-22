@@ -21,7 +21,7 @@ export default function TentangKami() {
             />
         </div>
         <div className="md:grid md:grid-cols-8 gap-4 mx-8">
-            <div className="col-span-3 mb-16 md:my-auto italic text-2xl text-center flex flex-col">
+            <div className="col-span-3 mt-16 mb-32 md:my-auto italic text-2xl text-center flex flex-col">
                 <RevealText
                     text={['"シンプル、', '味わい豊か。"']}
                     startDelay={0}
