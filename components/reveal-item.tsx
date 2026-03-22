@@ -29,8 +29,8 @@ export function Reveal({ children, className }: Props) {
     const { ref, isVisible } = useOnVisible({ threshold: 0.2 });
 
     return (
-        <div ref={ref} className={`transition-[opacity,filter,transform] duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`}>
+        <span ref={ref} className={`transition-[opacity,filter,transform] duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`}>
             {children}
-        </div>
+        </span>
     );
 }

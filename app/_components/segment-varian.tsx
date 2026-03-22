@@ -3,7 +3,7 @@
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
-import { VariantReveal } from "./variant-reveal-item";
+import { MoveUpReveal } from "./component-move-up-reveal-item";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -99,14 +99,14 @@ export default function Varian() {
     return <div className="w-full my-16">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
-                <VariantReveal className="delay-100">Varian</VariantReveal>
+                <MoveUpReveal className="delay-100">Varian</MoveUpReveal>
             </div>
         </Parallax>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-8 gap-4 px-8">
             {itemVarian.map((item, index) => (
-                <VariantReveal className={`delay-${index}00`} key={index}>
+                <MoveUpReveal className={`delay-${index}00`} key={index}>
                     <Item {...item} />
-                </VariantReveal>
+                </MoveUpReveal>
             ))}
         </div>
     </div>
