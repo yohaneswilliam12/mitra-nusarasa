@@ -8,6 +8,7 @@ import { Button } from "@heroui/button"
 import * as LucideReact from 'lucide-react';
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { addToast } from "@heroui/toast"
 
 interface CardHighlights {
     icon?: keyof typeof LucideReact
@@ -57,6 +58,15 @@ const CardHighlights = (props: CardHighlights) => {
 }
 
 export default function Kemitraan() {
+
+    const openWhatsapp = () => {
+        addToast({
+            title: "Belum Tersedia",
+            description: "Tunggu sebentar ya, kontak admin sedang dipersiapkan!",
+            variant: 'flat',
+            color: "warning"
+        })
+    }
     return <div className="w-full">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
@@ -78,7 +88,7 @@ export default function Kemitraan() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-8">
                 {highlights.map((item, index) => (
-                    <MoveUpReveal className={`delay-${index+1}00`} key={index}>
+                    <MoveUpReveal className={`delay-${index + 1}00`} key={index}>
                         <CardHighlights {...item} />
                     </MoveUpReveal>
                 ))}
@@ -93,7 +103,7 @@ export default function Kemitraan() {
                                 step={25}
                             />
                         </div>
-                        <Button color="success" variant="flat" size="lg">Bergabung</Button>
+                        <Button color="success" variant="flat" size="lg" onClick={openWhatsapp}>Bergabung</Button>
                     </Card>
                 </MoveUpReveal>
             </div>
