@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 
 type Props = {
     children: React.ReactNode;
     className?: string;
+    style?: CSSProperties | undefined;
 };
 
 export function useOnVisible(options?: IntersectionObserverInit) {
@@ -25,11 +26,11 @@ export function useOnVisible(options?: IntersectionObserverInit) {
     return { ref, isVisible };
 }
 
-export function Reveal({ children, className }: Props) {
+export function Reveal({ children, className, style }: Props) {
     const { ref, isVisible } = useOnVisible({ threshold: 0.2 });
 
     return (
-        <span ref={ref} className={`transition-[opacity,filter,transform] duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`}>
+        <span ref={ref} className={`transition-[opacity,filter,transform] duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`} style={style}>
             {children}
         </span>
     );
