@@ -5,7 +5,7 @@ type Props = {
     className?: string;
 };
 
-function useOnVisible(options?: IntersectionObserverInit) {
+export function useOnVisible(options?: IntersectionObserverInit) {
     const ref = useRef<HTMLDivElement | null>(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -29,7 +29,7 @@ export function Reveal({ children, className }: Props) {
     const { ref, isVisible } = useOnVisible({ threshold: 0.2 });
 
     return (
-        <div ref={ref} className={`transition-all duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`}>
+        <div ref={ref} className={`transition-[opacity,filter,transform] duration-500 ease-out origin-center ${isVisible ? "opacity-100 blur-none scale-100" : "opacity-0 blur-sm scale-110"} ${className}`}>
             {children}
         </div>
     );

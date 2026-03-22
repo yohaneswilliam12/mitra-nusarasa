@@ -67,7 +67,7 @@ export const Navbar = () => {
             window.history.replaceState(null, '', window.location.pathname);
             setHash('');
           }}>
-            <Image src={'./logo.png'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
+            <Image src={'./logo.webp'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
