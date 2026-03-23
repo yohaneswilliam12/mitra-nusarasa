@@ -106,7 +106,9 @@ export default function Varian() {
         </Parallax>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-8 gap-4 px-8">
             {itemVarian.map((item, index) => (
-                <MoveUpReveal className={`delay-${index}00`} key={index}>
+                <MoveUpReveal style={{
+                    transitionDelay: `${index * 50}ms`,
+                }} key={index}>
                     <Item {...item} />
                 </MoveUpReveal>
             ))}

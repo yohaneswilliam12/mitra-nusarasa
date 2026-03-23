@@ -34,7 +34,7 @@ export default function TentangKami() {
                     step={25}
                 />
             </div>
-            <div className="col-span-5 grid grid-cols-4 gap-4">
+            <div className="transition-all col-span-5 grid grid-cols-4 gap-2 sm:gap-4">
                 <MoveUpReveal className="flex col-span-2 row-span-2">
                     <Card>
                         <Image alt="image-1" src={'./favicon.webp'} width={760} height={760} className="m-auto" />
