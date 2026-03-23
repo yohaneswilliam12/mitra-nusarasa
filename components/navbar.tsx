@@ -19,10 +19,12 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+  Instagram,
   SearchIcon,
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { Button } from "@heroui/button";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -78,6 +80,11 @@ export const Navbar = () => {
     />
   };
 
+  const InstagramButton = () => {
+    return <Link href="https://instagram.com/agemon.id" className="mx-1 hover:opacity-80 cursor-pointer transition-opacity">
+      <Instagram size={22} />
+    </Link>
+  }
   return (
     <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={isOpen} onMenuOpenChange={setOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -122,6 +129,7 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex gap-2">
+          <InstagramButton />
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden md:flex"><SearchInput /></NavbarItem>
@@ -129,6 +137,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
+        <InstagramButton />
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
