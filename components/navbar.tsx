@@ -24,7 +24,6 @@ import {
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Button } from "@heroui/button";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
