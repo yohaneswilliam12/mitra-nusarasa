@@ -21,7 +21,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import {
   SearchIcon,
 } from "@/components/icons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export const Navbar = () => {
@@ -33,17 +33,29 @@ export const Navbar = () => {
     window.addEventListener("hashchange", updateHash);
     return () => window.removeEventListener("hashchange", updateHash);
   }, []);
-  const searchInput = (
-    <Input
+
+  const SearchInput = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const ismac = navigator.userAgent.toLowerCase().includes("mac");
+    useEffect(() => {
+      const handler = (e: KeyboardEvent) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          inputRef.current?.focus();
+        }
+      };
+      window.addEventListener("keydown", handler);
+      return () => window.removeEventListener("keydown", handler);
+    }, []);
+    return <Input
+      ref={inputRef}
       aria-label="Search"
       classNames={{
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
       endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
+        ismac ? <Kbd className="hidden lg:inline-block" keys={["command"]}>K</Kbd> : <Kbd className="hidden lg:inline-block">Ctrl K</Kbd>
       }
       labelPlacement="outside"
       placeholder="Cari..."
@@ -52,7 +64,7 @@ export const Navbar = () => {
       }
       type="search"
     />
-  );
+  };
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={isOpen} onMenuOpenChange={setOpen}>
@@ -100,7 +112,7 @@ export const Navbar = () => {
         <NavbarItem className="hidden md:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden md:flex">{searchInput}</NavbarItem>
+        <NavbarItem className="hidden md:flex"><SearchInput /></NavbarItem>
         <NavbarMenuToggle className="sm:hidden md:flex lg:hidden flex" />
       </NavbarContent>
 
@@ -111,7 +123,7 @@ export const Navbar = () => {
 
       <NavbarMenu>
         <div className="md:hidden">
-          {searchInput}
+          <SearchInput />
         </div>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navItems.map((item, index) => (
