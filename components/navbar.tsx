@@ -36,6 +36,11 @@ export const Navbar = () => {
 
   const SearchInput = () => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const [isMac, setIsMac] = useState<boolean | null>(null);
+
+    useEffect(() => {
+      setIsMac(navigator.userAgent.toLowerCase().includes("mac"));
+    }, []);
     useEffect(() => {
       const handler = (e: KeyboardEvent) => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -54,7 +59,15 @@ export const Navbar = () => {
         input: "text-sm",
       }}
       endContent={
-        navigator.userAgent.toLowerCase().includes("mac") ? <Kbd className="hidden lg:inline-block" keys={["command"]}>K</Kbd> : <Kbd className="hidden lg:inline-block">Ctrl K</Kbd>
+        isMac === null ? <Kbd className="hidden lg:inline-block">⠀⠀⠀</Kbd> : isMac ? (
+          <Kbd className="hidden lg:inline-block" keys={["command"]}>
+            K
+          </Kbd>
+        ) : (
+          <Kbd className="hidden lg:inline-block">
+            Ctrl K
+          </Kbd>
+        )
       }
       labelPlacement="outside"
       placeholder="Cari..."
