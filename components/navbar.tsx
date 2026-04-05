@@ -25,13 +25,14 @@ import {
   Whatsapp,
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [hash, setHash] = useState<string>();
-  const searchParams = useSearchParams();
-  const keyword = (searchParams.get("keyword") ?? "").trim();
+  // const searchParams = useSearchParams();
+  // const keyword = (searchParams.get("keyword") ?? "").trim();
+  const keyword = "";
 
   const router = useRouter();
 
