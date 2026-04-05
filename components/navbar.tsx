@@ -111,7 +111,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           {/* TODO: change this based on domain name */}
-          <NextLink className="flex justify-start items-center gap-1" href="/mitra-nusarasa/" onClick={(e) => {
+          <NextLink className="flex justify-start items-center gap-1" href="/" onClick={(e) => {
             e.preventDefault();
             window.scrollTo({
               top: 0,
