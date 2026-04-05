@@ -19,15 +19,21 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
+  Facebook,
   Instagram,
   SearchIcon,
+  Whatsapp,
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [hash, setHash] = useState<string>();
+
+  const router = useRouter();
+
   useEffect(() => {
     const updateHash = () => setHash(window.location.hash.replace('#', ''));
     updateHash();
@@ -47,6 +53,9 @@ export const Navbar = () => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
           e.preventDefault();
           inputRef.current?.focus();
+        }
+        if ((e.key.toLowerCase() === 'enter')) {
+          router.push(`./search?keyword=${inputRef.current?.value}`)
         }
       };
       window.addEventListener("keydown", handler);
@@ -80,10 +89,23 @@ export const Navbar = () => {
   };
 
   const InstagramButton = () => {
-    return <Link href="https://instagram.com/agemon.id" className="mx-1 hover:opacity-80 cursor-pointer transition-opacity">
-      <Instagram size={22} />
+    return <Link isExternal href="https://instagram.com/agemon.id" title="Instagram" className="mx-1 hover:opacity-80 cursor-pointer transition-opacity">
+      <Instagram size={22} className="text-default-500" />
     </Link>
   }
+
+  const WhatsappButton = () => {
+    return <Link isExternal href="https://wa.me/message/EU2TRMLX3TJYN1" title="Whatsapp" className="mx-1 hover:opacity-80 cursor-pointer transition-opacity">
+      <Whatsapp size={22} className="text-default-500" />
+    </Link>
+  }
+
+  const FacebookButton = () => {
+    return <Link isExternal href="https://www.facebook.com/share/1CfRt25Mwa/?mibextid=wwXIfr" title="Facebook" className="mx-1 hover:opacity-80 cursor-pointer transition-opacity">
+      <Facebook size={22} className="text-default-500" />
+    </Link>
+  }
+
   return (
     <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={isOpen} onMenuOpenChange={setOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -128,7 +150,9 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex gap-2">
+          <FacebookButton />
           <InstagramButton />
+          <WhatsappButton />
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden md:flex"><SearchInput /></NavbarItem>
@@ -136,7 +160,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
+        <FacebookButton />
         <InstagramButton />
+        <WhatsappButton />
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
