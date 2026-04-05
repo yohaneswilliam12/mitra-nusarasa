@@ -106,7 +106,7 @@ const SearchPage = (props: SearchProps) => {
     return <div className="w-full my-16">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-xl lg:text-3xl my-8">
-                <MoveUpReveal className="delay-100">Pencarian untuk "{props.keyword}"</MoveUpReveal>
+                <MoveUpReveal className="delay-100">Pencarian untuk &quot;{props.keyword}&quot;</MoveUpReveal>
             </div>
         </Parallax>
         {filteredVariant.length == 0 && filteredPartnership.length == 0 ?
