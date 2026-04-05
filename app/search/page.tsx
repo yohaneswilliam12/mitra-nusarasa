@@ -1,9 +1,8 @@
-import { SearchParams } from "@/types";
+import { Suspense } from "react";
 import SearchPage from "../_components/page-search";
 
-export default async function Search({ searchParams }: { searchParams?: Promise<SearchParams> }) {
-    // const keyword = (searchParams)?.keyword??"";
-    // await searchParams
-    const keyword = "";
-    return <SearchPage keyword={keyword??""} />
+export default async function Search() {
+    return <Suspense>
+        <SearchPage />
+    </Suspense>
 }
