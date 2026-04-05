@@ -25,14 +25,13 @@ import {
   Whatsapp,
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [hash, setHash] = useState<string>();
-  // const searchParams = useSearchParams();
-  // const keyword = (searchParams.get("keyword") ?? "").trim();
-  const keyword = "";
+  const searchParams = useSearchParams();
+  const keyword = (searchParams.get("keyword") ?? "").trim();
 
   const router = useRouter();
 
@@ -56,14 +55,18 @@ export const Navbar = () => {
           e.preventDefault();
           inputRef.current?.focus();
         }
+      };
+
+      const searchHandler = (e: KeyboardEvent) => {
         if ((e.key.toLowerCase() === 'enter')) {
           setOpen(false);
           inputRef.current?.value.length ?
             router.push(`./search?keyword=${inputRef.current?.value}`)
             : router.push(`/`)
         }
-      };
+      }
       window.addEventListener("keydown", handler);
+      inputRef.current?.addEventListener("keydown", searchHandler);
       return () => window.removeEventListener("keydown", handler);
     }, []);
     return <Input
