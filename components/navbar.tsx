@@ -130,7 +130,7 @@ export const Navbar = () => {
               : window.history.replaceState(null, '', '/');
             setHash('');
           }}>
-            <div className="bg-[url('/logo.webp')] w-[80px] h-[28px] bg-contain bg-no-repeat pointer-events-none select-none inline-block" />
+            <div className="bg-[url('./logo.webp')] w-[80px] h-[28px] bg-contain bg-no-repeat pointer-events-none select-none inline-block" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
