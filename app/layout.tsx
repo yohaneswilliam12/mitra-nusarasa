@@ -47,7 +47,7 @@ export default async function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar keyword={String(searchParams?.keyword ?? "")} />
+            <Navbar keyword={String((await searchParams)?.keyword ?? "")} />
             <main className="container mx-auto max-w-7xl flex-grow">
               {children}
             </main>

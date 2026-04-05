@@ -2,6 +2,7 @@
   "name": "next-app-template",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -64,6 +65,7 @@
     "webgl-fluid-enhanced": "^0.8.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.0.4",
     "@next/eslint-plugin-next": "15.5.9",
     "@react-types/shared": "3.33.0",
     "@tailwindcss/postcss": "4.1.11",
