@@ -7,3 +7,16 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 export interface PageProp<T = unknown> {
   params: Promise<T & { id: string }>;
 }
+export enum ItemType {
+  Variants,
+  Partnerships
+}
+
+export interface ItemVariants {
+  name: string
+  description: string
+  image: string
+  color?: string
+  colorDark?: string
+  type?: ItemType
+}

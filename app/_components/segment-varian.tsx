@@ -1,11 +1,8 @@
 "use client"
 
-import { Card, CardBody, CardHeader } from "@heroui/card";
-import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
 import { MoveUpReveal } from "./component-move-up-reveal-item";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import ItemVariantCard from "./card-item-variants";
 
 interface ItemVariants {
     name: string
@@ -71,31 +68,6 @@ const itemVarian: ItemVariants[] = [
     },
 ]
 
-const Item = (props: ItemVariants) => {
-    const { resolvedTheme } = useTheme();
-    const [theme, setTheme] = useState<string | undefined>(undefined);
-    useEffect(() => {
-        setTheme(resolvedTheme);
-    }, [resolvedTheme]);
-    return <Card className="py-4 overflow-visible">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2 overflow-auto">
-            <p className={`transition-all text-xl md:text-2xl font-bold`} style={{ color: theme === 'dark' ? props.colorDark : props.color }}>{props.name}</p>
-            <small className="text-default-500 min-h-20">{props.description}</small>
-        </CardHeader>
-        <CardBody className="overflow-visible py-0 h-50">
-            <Parallax speed={2} className="my-auto">
-                <Image
-                    alt={props.name}
-                    className="w-80 m-auto"
-                    src={props.image}
-                    width={1218}
-                    height={760}
-                />
-            </Parallax>
-        </CardBody>
-    </Card>
-}
-
 
 export default function Varian() {
     return <div className="w-full my-16">
@@ -109,7 +81,7 @@ export default function Varian() {
                 <MoveUpReveal style={{
                     transitionDelay: `${index * 50}ms`,
                 }} key={index}>
-                    <Item {...item} />
+                    <ItemVariantCard {...item} />
                 </MoveUpReveal>
             ))}
         </div>

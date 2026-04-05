@@ -25,12 +25,13 @@ import {
   Whatsapp,
 } from "@/components/icons";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [hash, setHash] = useState<string>();
+  const searchParams = useSearchParams();
+  const keyword = (searchParams.get("keyword") ?? "").trim();
 
   const router = useRouter();
 
@@ -55,7 +56,9 @@ export const Navbar = () => {
           inputRef.current?.focus();
         }
         if ((e.key.toLowerCase() === 'enter')) {
-          router.push(`./search?keyword=${inputRef.current?.value}`)
+          inputRef.current?.value.length ?
+            router.push(`./search?keyword=${inputRef.current?.value}`)
+            : router.push(`/`)
         }
       };
       window.addEventListener("keydown", handler);
@@ -68,6 +71,7 @@ export const Navbar = () => {
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
+      defaultValue={keyword}
       endContent={
         isMac === null ? <Kbd className="hidden lg:inline-block">⠀⠀⠀</Kbd> : isMac ? (
           <Kbd className="hidden lg:inline-block" keys={["command"]}>
@@ -121,7 +125,7 @@ export const Navbar = () => {
               : window.history.replaceState(null, '', '/');
             setHash('');
           }}>
-            <Image src={'./logo.webp'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
+            <div className="bg-[url('/logo.webp')] w-[80px] h-[28px] bg-contain bg-no-repeat pointer-events-none select-none inline-block" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
