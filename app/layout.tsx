@@ -8,7 +8,6 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import { SearchParams } from "next/dist/server/request/search-params";
 // import Canvas from "@/components/canvas";
 
 export const metadata: Metadata = {
@@ -31,13 +30,11 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({
   children,
-  searchParams
 }: {
   children: React.ReactNode;
-  searchParams?: Promise<SearchParams>;
 }) {
   return (
-    <html suppressHydrationWarning lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html suppressHydrationWarning lang="en" className="scroll-smooth">
       <head />
       <body
         className={clsx(
@@ -47,7 +44,7 @@ export default async function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar keyword={String((await searchParams)?.keyword ?? "")} />
+            <Navbar />
             <main className="container mx-auto max-w-7xl flex-grow">
               {children}
             </main>
