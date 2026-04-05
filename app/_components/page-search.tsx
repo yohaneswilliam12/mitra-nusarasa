@@ -4,7 +4,10 @@ import { ItemType, ItemVariants } from "@/types"
 import { MoveUpReveal } from "./component-move-up-reveal-item"
 import ItemVariantCard from "./card-item-variants"
 import { Parallax } from "react-scroll-parallax"
-import { useSearchParams } from "next/navigation"
+
+interface SearchProps {
+    keyword: string
+}
 
 const itemVarian: ItemVariants[] = [
     {
@@ -86,9 +89,8 @@ const itemPartnership: ItemVariants[] = [
     },
 ]
 
-const SearchPage = () => {
-    const searchParams = useSearchParams();
-    const keyword = (searchParams.get("keyword") ?? "").toLowerCase().trim();
+const SearchPage = (props: SearchProps) => {
+    const keyword = props.keyword.toLowerCase().trim();
     const filteredVariant = itemVarian.filter(item => {
         const name = item.name.toLowerCase()
         const description = item.description.toLowerCase()
@@ -104,7 +106,7 @@ const SearchPage = () => {
     return <div className="w-full my-16">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-xl lg:text-3xl my-8">
-                <MoveUpReveal className="delay-100">Pencarian untuk "{searchParams.get("keyword")}"</MoveUpReveal>
+                <MoveUpReveal className="delay-100">Pencarian untuk "{props.keyword}"</MoveUpReveal>
             </div>
         </Parallax>
         {filteredVariant.length == 0 && filteredPartnership.length == 0 ?
