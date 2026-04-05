@@ -56,6 +56,7 @@ export const Navbar = () => {
           inputRef.current?.focus();
         }
         if ((e.key.toLowerCase() === 'enter')) {
+          setOpen(false);
           inputRef.current?.value.length ?
             router.push(`./search?keyword=${inputRef.current?.value}`)
             : router.push(`/`)
