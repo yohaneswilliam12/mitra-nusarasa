@@ -34,7 +34,7 @@ export default async function RootLayout({
   searchParams
 }: {
   children: React.ReactNode;
-  searchParams?: SearchParams;
+  searchParams?: Promise<SearchParams>;
 }) {
   return (
     <html suppressHydrationWarning lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
