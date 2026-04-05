@@ -110,14 +110,15 @@ export const Navbar = () => {
     <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={isOpen} onMenuOpenChange={setOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          {/* TODO: change this based on domain name */}
           <NextLink className="flex justify-start items-center gap-1" href="/" onClick={(e) => {
             e.preventDefault();
             window.scrollTo({
               top: 0,
               behavior: "smooth",
             });
-            window.history.replaceState(null, '', window.location.pathname);
+            window.location.pathname != '/' ?
+              router.replace('/')
+              : window.history.replaceState(null, '', '/');
             setHash('');
           }}>
             <Image src={'./logo.webp'} width={1379} height={482} alt="Agemon Logo" priority className="min-w-20 max-w-20" />
