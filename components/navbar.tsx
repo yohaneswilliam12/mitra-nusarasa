@@ -54,6 +54,7 @@ export const Navbar = () => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
           e.preventDefault();
           inputRef.current?.focus();
+          inputRef.current?.select();
         }
       };
 
