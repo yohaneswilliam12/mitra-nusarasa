@@ -9,6 +9,7 @@ import * as LucideReact from 'lucide-react';
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import { addToast } from "@heroui/toast"
+import Link from "next/link"
 
 interface CardHighlights {
     icon?: keyof typeof LucideReact
@@ -80,16 +81,6 @@ const CardHighlights = (props: CardHighlights) => {
 }
 
 export default function Kemitraan() {
-
-    const openWhatsapp = () => {
-        // addToast({
-        //     title: "Belum Tersedia",
-        //     description: "Tunggu sebentar ya, kontak admin sedang dipersiapkan!",
-        //     variant: 'flat',
-        //     color: "warning"
-        // })
-        navigation.navigate('https://wa.me/message/EU2TRMLX3TJYN1')
-    }
     return <div className="w-full">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
@@ -126,7 +117,7 @@ export default function Kemitraan() {
                                 step={25}
                             />
                         </div>
-                        <Button color="danger" variant="solid" size="lg" className="font-bold text-lg dark:bg-[#d43a22] bg-[#ff2200]" onPress={openWhatsapp}>Gabung Sekarang!</Button>
+                        <Link href={"https://wa.me/message/EU2TRMLX3TJYN1"}><Button color="danger" variant="solid" size="lg" className="font-bold text-lg dark:bg-[#d43a22] bg-[#ff2200]">Gabung Sekarang!</Button></Link>
                     </Card>
                 </MoveUpReveal>
             </div>
