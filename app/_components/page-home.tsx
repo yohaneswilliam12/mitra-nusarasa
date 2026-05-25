@@ -5,6 +5,7 @@ import Beranda from "./segment-beranda";
 import Kemitraan from "./segment-kemitraan";
 import TentangKami from "./segment-tentang-kami";
 import Varian from "./segment-varian";
+import PaketUsaha from "./segment-paket-usaha";
 
 const HomePage = () => {
     useEffect(() => {
@@ -22,6 +23,9 @@ const HomePage = () => {
     return <>
         <section id="beranda">
             <Beranda />
+        </section>
+        <section id="paket-usaha">
+            <PaketUsaha/>
         </section>
         <section id="varian">
             <Varian />

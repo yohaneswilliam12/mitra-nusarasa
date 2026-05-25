@@ -12,7 +12,7 @@ export default function Beranda() {
     }, []);
     return <div className="w-full flex flex-col">
         <Parallax speed={-5}>
-            <Image src={'./slogan.webp'} width={1200} height={1394} alt="slogan" priority className={`transition-all duration-500 ease-out w-164 mx-auto my-8 ${loaded ? 'scale-100 opacity-100 blur-none' : 'scale-110 opacity-0 blur-md'}`} />
+            <Image src={'./placeholder.jpg'} width={1200} height={1394} alt="slogan" priority className={`transition-all duration-500 ease-out w-164 mx-auto my-8 ${loaded ? 'scale-100 opacity-100 blur-none' : 'scale-110 opacity-0 blur-md'} rounded-2xl`} />
         </Parallax>
         <div className="p-8 flex flex-col gap-1 lg:gap-2">
             <div className="transition-all text-center font-bold text-2xl sm:text-3xl lg:text-5xl text-[rgb(255,58,65)]">

@@ -13,35 +13,54 @@ import { addToast } from "@heroui/toast"
 interface CardHighlights {
     icon?: keyof typeof LucideReact
     label: string
+    description?: string
     color?: string
     colorDark?: string
 }
 
 const highlights: CardHighlights[] = [
     {
+        icon: 'Video',
+        label: 'Promosi Opening',
+        description: 'Promosi pembukaan gratis untuk menarik pelanggan pertama Anda',
+        color: 'rgb(249,78,40)',
+        colorDark: 'rgb(220,68,40)'
+    },
+    {
         icon: 'MapPin',
         label: 'Analisa Lokasi',
+        description: 'Bantuan pemilihan lokasi penjualan strategis',
         color: 'rgb(149,78,255)',
         colorDark: 'rgb(220,68,255)'
     },
     {
         icon: 'Image',
         label: 'Pemasaran Digital',
+        description: 'Akses akun resmi yang mudah dijangkau calon pelanggan',
         color: 'rgb(48,178,252)',
         colorDark: 'rgb(10,160,254)',
     },
     {
         icon: 'Book',
         label: 'Penulisan Resep',
+        description: 'Pembagian resep ketika menu baru sudah tersedia',
         color: 'rgb(247,131,32)',
         colorDark: 'rgb(255,191,12)',
     },
     {
         icon: 'Phone',
         label: 'Konsultasi',
+        description: 'Konsultasi via telepon/WA gratis dengan tim kami',
         color: 'rgb(85,137,97)',
         colorDark: 'rgb(85,255,120)',
-    }
+    },
+    {
+        icon: 'Store',
+        label: 'Subsidi Event',
+        description: 'Dukungan untuk mengikuti festival/event makanan',
+        color: 'rgb(247,131,32)',
+        colorDark: 'rgb(255,191,12)',
+    },
 ]
 
 const CardHighlights = (props: CardHighlights) => {
@@ -51,21 +70,25 @@ const CardHighlights = (props: CardHighlights) => {
         setTheme(resolvedTheme);
     }, [resolvedTheme]);
     const Icon = (props.icon ? LucideReact[props.icon] : LucideReact.HelpCircle) as LucideReact.LucideIcon;
-    return <Card className="p-8 flex h-full flex-col gap-16 text-2xl font-medium" style={{ color: theme === 'dark' ? props.colorDark : props.color, backgroundColor: theme === 'dark' ? props.colorDark?.replace('rgb', 'rgba').replace(')', ', 0.2)') : props.color?.replace('rgb', 'rgba').replace(')', ', 0.2)') }}>
-        <Icon size={40} strokeWidth={1.2} />
-        {props.label}
+    return <Card className="p-8 flex h-full flex-col items-center" style={{ color: theme === 'dark' ? props.colorDark : props.color }}>
+        <Icon size={40} strokeWidth={1.2} className="m-10" />
+        <div>
+            <div className="text-default-foreground text-2xl font-bold text-center">{props.label}</div>
+            <div className="text-default-foreground text-justify">{props.description}</div>
+        </div>
     </Card>
 }
 
 export default function Kemitraan() {
 
     const openWhatsapp = () => {
-        addToast({
-            title: "Belum Tersedia",
-            description: "Tunggu sebentar ya, kontak admin sedang dipersiapkan!",
-            variant: 'flat',
-            color: "warning"
-        })
+        // addToast({
+        //     title: "Belum Tersedia",
+        //     description: "Tunggu sebentar ya, kontak admin sedang dipersiapkan!",
+        //     variant: 'flat',
+        //     color: "warning"
+        // })
+        navigation.navigate('https://wa.me/message/EU2TRMLX3TJYN1')
     }
     return <div className="w-full">
         <Parallax speed={-2}>
@@ -95,7 +118,7 @@ export default function Kemitraan() {
             </div>
             <div className="flex mx-8">
                 <MoveUpReveal className="flex-1 delay-450">
-                    <Card className="md:flex md:flex-row items-center gap-4 p-4">
+                    <Card className="md:flex md:flex-row items-center gap-4 p-4 bg-gradient-to-b md:bg-gradient-to-r from-[#f5f5f50e] from-0% via-[#f5f5f50e] via-0% md:via-70% to-100% to-[#f5908157]">
                         <div className="transition-all text-md text-center md:text-left md:text-lg flex-1">
                             <RevealText
                                 text="Dapatkan Penawaran Spesial untuk Menjadi Mitra Kami dan Mulai Kembangkan Bisnis Bersama Kami."
@@ -103,7 +126,7 @@ export default function Kemitraan() {
                                 step={25}
                             />
                         </div>
-                        <Button color="success" variant="flat" size="lg" onClick={openWhatsapp}>Bergabung</Button>
+                        <Button color="danger" variant="solid" size="lg" className="font-bold text-lg dark:bg-[#d43a22] bg-[#ff2200]" onPress={openWhatsapp}>Gabung Sekarang!</Button>
                     </Card>
                 </MoveUpReveal>
             </div>

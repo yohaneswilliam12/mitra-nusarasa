@@ -9,6 +9,10 @@ export const siteConfig = {
       href: "./#beranda",
     },
     {
+      label: "Paket Usaha",
+      href: "./#paket-usaha",
+    },
+    {
       label: "Varian",
       href: "./#varian",
     },
