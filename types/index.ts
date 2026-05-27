@@ -8,6 +8,11 @@ export interface PageProp<T = unknown> {
   params: Promise<T & { id: string }>;
 }
 
+export enum VariantStatus {
+  'Ready',
+  'Coming Soon'
+}
+
 export interface ItemVariants {
   name: string
   description: string
@@ -24,4 +29,13 @@ export interface ItemPackages {
   image: string
   color?: string
   colorDark?: string
+}
+
+export interface ItemTypes {
+  index?: number
+  name: string
+  caption: string
+  image: string
+  status: VariantStatus
+  url?: string
 }

@@ -1,16 +1,10 @@
-"use client"
+"use client";
 
+import ItemVariantCard from "@/app/_components/card-item-variants";
+import { MoveUpReveal } from "@/app/_components/component-move-up-reveal-item";
+import { ItemVariants } from "@/types";
 import { Parallax } from "react-scroll-parallax";
-import { MoveUpReveal } from "./component-move-up-reveal-item";
-import ItemVariantCard from "./card-item-variants";
 
-interface ItemVariants {
-    name: string
-    description: string
-    image: string
-    color?: string
-    colorDark?: string
-}
 const itemVarian: ItemVariants[] = [
     {
         name: 'Original',

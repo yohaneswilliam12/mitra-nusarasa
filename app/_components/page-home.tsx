@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Beranda from "./segment-beranda";
 import Kemitraan from "./segment-kemitraan";
 import TentangKami from "./segment-tentang-kami";
-import Varian from "./segment-varian";
+import TipeVarian from "./segment-tipe-varian";
 import PaketUsaha from "./segment-paket-usaha";
 
 const HomePage = () => {
@@ -28,7 +28,7 @@ const HomePage = () => {
             <PaketUsaha/>
         </section>
         <section id="varian">
-            <Varian />
+            <TipeVarian />
         </section>
         <section id="kemitraan">
             <Kemitraan />
