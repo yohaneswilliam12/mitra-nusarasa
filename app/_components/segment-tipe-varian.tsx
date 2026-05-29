@@ -9,14 +9,14 @@ const itemTypes: ItemTypes[] = [
     {
         name: "Varian Manis",
         caption: "Lihat selengkapnya",
-        image: "placeholder.jpg",
+        image: "variant-sweet.png",
         status: VariantStatus.Ready,
         url: './variant-sweet'
     },
     {
         name: "Varian Asin",
         caption: "Segera datang",
-        image: "placeholder.jpg",
+        image: "variant-savory.png",
         status: VariantStatus["Coming Soon"]
     }
 ]

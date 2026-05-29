@@ -37,7 +37,7 @@ export default function TentangKami() {
             <div className="transition-all col-span-5 grid grid-cols-4 gap-2 sm:gap-4">
                 <MoveUpReveal className="flex col-span-2 row-span-2">
                     <Card>
-                        <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
+                        <Image alt="image-1" src={'./thumb-1.png'} width={760} height={760} className="m-auto" />
                     </Card>
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-1 delay-50">

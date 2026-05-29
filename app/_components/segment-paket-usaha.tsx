@@ -8,21 +8,21 @@ const itemPaketUsaha = [
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
         price: 'Rp5.000.000',
         caption: 'Beli',
-        image: './placeholder.jpg',
+        image: './cart.png',
     },
     {
         name: 'Premium',
         description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
         price: 'Rp8.000.000',
         caption: 'Beli',
-        image: './placeholder.jpg',
+        image: './cart.png',
     },
     {
         name: 'Extended',
         description: 'Paket usaha premium dengan tambahan yang bisa disesuaikan dengan keinginan anda.',
         price: 'Dapatkan penawaran',
         caption: 'Hubungi',
-        image: './placeholder.jpg',
+        image: 'cart.png',
     },
 ]
 
