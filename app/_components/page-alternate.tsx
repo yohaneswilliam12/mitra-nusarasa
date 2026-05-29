@@ -20,7 +20,7 @@ const AlternatePage = () => {
         </div>
         <footer className="w-full flex items-center justify-center py-3">
             <div className="flex items-center gap-1 text-current">
-                <span className="text-default">&copy; 2026</span>
+                <span className="text-black">&copy; 2026</span>
                 <p className="text-primary">Mitra Nusarasa Mandiri</p>
             </div>
         </footer>
