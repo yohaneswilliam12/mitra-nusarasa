@@ -12,6 +12,7 @@ import { Suspense } from "react";
 import { FloatingActionButton, FloatingActionButtonProvider } from "@/components/floating-action-button";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
+import AlternatePage from "./_components/page-alternate";
 // import Canvas from "@/components/canvas";
 
 export const metadata: Metadata = {
@@ -46,24 +47,28 @@ export default async function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col">
-            <Suspense>
-              <Navbar />
-            </Suspense>
-            <main className="container mx-auto max-w-7xl flex-grow">
-              {children}
-            </main>
-            <FloatingActionButtonProvider>
-              <Link href={'https://wa.me/message/EU2TRMLX3TJYN1'}><FloatingActionButton color="success"><MessageCircle color="white" /><div className="text-white font-medium">Hubungi kami</div></FloatingActionButton></Link>
-            </FloatingActionButtonProvider>
-            <footer className="w-full flex items-center justify-center py-3">
-              <div className="flex items-center gap-1 text-current">
-                <span className="text-default-600">&copy; 2026</span>
-                <p className="text-primary">Mitra Nusarasa Mandiri</p>
-              </div>
-            </footer>
-          </div>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          {siteConfig.isReady ?
+            <div className="relative flex flex-col">
+              <Suspense>
+                <Navbar />
+              </Suspense>
+              <main className="container mx-auto max-w-7xl flex-grow">
+                {children}
+              </main>
+              <FloatingActionButtonProvider>
+                <Link href={'https://wa.me/message/EU2TRMLX3TJYN1'}><FloatingActionButton color="success"><MessageCircle color="white" /><div className="text-white font-medium">Hubungi kami</div></FloatingActionButton></Link>
+              </FloatingActionButtonProvider>
+              <footer className="w-full flex items-center justify-center py-3">
+                <div className="flex items-center gap-1 text-current">
+                  <span className="text-default-600">&copy; 2026</span>
+                  <p className="text-primary">Mitra Nusarasa Mandiri</p>
+                </div>
+              </footer>
+            </div>
+            :
+            <AlternatePage />
+          }
         </Providers>
       </body>
     </html>
