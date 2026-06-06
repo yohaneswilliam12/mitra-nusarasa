@@ -30,7 +30,7 @@ const ItemPackagesCard = (props: ItemPackages) => {
         </CardBody>
         <div className="px-4 flex flex-col gap-4">
             <p className="text-lg md:text-2xl font-semibold">{props.price}</p>
-            <Button color="danger" variant="solid" size="lg" className="text-large font-bold bg-[rgb(255,58,65)]" onClick={props.onClick}>{props.caption}</Button>
+            <Button color="danger" variant="solid" size="lg" className="text-large font-bold bg-[rgb(255,58,65)]" onPress={() => props.onClick(props.caption)}>{props.caption}</Button>
         </div>
     </Card>
 }
