@@ -29,6 +29,7 @@ export interface ItemPackages {
   image: string
   color?: string
   colorDark?: string
+  onClick: (msg: string) => void
 }
 
 export interface ItemTypes {

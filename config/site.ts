@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Agemon",
   description: "Agemon by Mitra Nusarasa Mandiri.",
-  isReady: false,
+  isReady: true,
   navItems: [
     {
       label: "Beranda",

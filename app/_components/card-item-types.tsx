@@ -24,7 +24,7 @@ const ItemTypesCard = (props: ItemTypes) => {
         <CardBody className="overflow-visible">
             <div className={`flex flex-col gap-2 ${(props.index ?? 0) % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className='flex-1 flex flex-col'>
-                    <p className={`transition-all text-2xl md:text-3xl mx-5 flex-1 font-bold text-center ${(props.index ?? 0) % 2 == 0 ? 'md:text-left' : 'md:text-right'}`}>{props.name}</p>
+                    <p className={`transition-all text-2xl md:text-3xl lg:text-4xl md:my-5 md:mx-8 mx-5 flex-1 font-bold text-center ${(props.index ?? 0) % 2 == 0 ? 'md:text-left' : 'md:text-right'}`}>{props.name}</p>
                     <div className={`px-4 gap-4 hidden md:block ${(props.index ?? 0) % 2 == 0 ? 'md:text-left' : 'md:text-right'}`}>
                         {props.url ?
                             <Link href={props.url}><Button variant="light" color="danger" size="lg" className="text-large font-bold">{props.caption}</Button></Link>

@@ -6,6 +6,16 @@ import ItemVariantCard from "./card-item-variants"
 import { Parallax } from "react-scroll-parallax"
 import { useSearchParams } from "next/navigation"
 import ItemPackagesCard from "./card-item-packages"
+import { addToast } from "@heroui/toast"
+
+const onClick = (message: string) => {
+    addToast({
+        title: "Belum Tersedia",
+        description: "Tunggu sebentar ya, kami sedang mempersiapkan paketnya!",
+        variant: 'flat',
+        color: "foreground"
+    })
+}
 
 const itemVarian: ItemVariants[] = [
     {
@@ -63,30 +73,38 @@ const itemVarian: ItemVariants[] = [
         colorDark: 'rgb(252,240,215)'
     },
 ]
+
 const itemPaketUsaha: ItemPackages[] = [
     {
         name: 'Standard',
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
-        price: 'Rp5.000.000',
-        caption: 'Beli',
-        image: './placeholder.jpg',
+        // price: 'Rp5.000.000',
+        price: 'TBA',
+        // caption: 'Beli',
+        caption: 'Hubungi',
+        image: './cart.png',
+        onClick
     },
     {
         name: 'Premium',
         description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
-        price: 'Rp8.000.000',
-        caption: 'Beli',
-        image: './placeholder.jpg',
+        // price: 'Rp8.000.000',
+        price: 'TBA',
+        // caption: 'Beli',
+        caption: 'Hubungi',
+        image: './cart.png',
+        onClick
     },
     {
         name: 'Extended',
         description: 'Paket usaha premium dengan tambahan yang bisa disesuaikan dengan keinginan anda.',
-        price: 'Dapatkan penawaran',
+        // price: 'Dapatkan penawaran',
+        price: 'TBA',
         caption: 'Hubungi',
-        image: './placeholder.jpg',
+        image: 'cart.png',
+        onClick
     },
 ]
-
 const SearchPage = () => {
     const searchParams = useSearchParams();
     const keyword = (searchParams.get("keyword") ?? "").toLowerCase().trim();
