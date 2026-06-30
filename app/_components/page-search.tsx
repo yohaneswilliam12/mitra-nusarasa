@@ -79,7 +79,7 @@ const itemPaketUsaha: ItemPackages[] = [
         name: 'Basic',
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
         // price: 'Rp5.000.000',
-        price: 'Rp17.000.000',
+        price: 'Rp17.500.000',
         caption: 'Beli',
         // caption: 'Hubungi',
         image: './cart.png',
