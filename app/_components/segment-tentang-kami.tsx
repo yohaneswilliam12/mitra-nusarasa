@@ -42,7 +42,7 @@ export default function TentangKami() {
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-1 delay-50">
                     <Card>
-                        <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
+                        <Image alt="image-1" src={'./thumb-2.png'} width={760} height={760} className="m-auto" />
                     </Card>
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-1 delay-100">
@@ -52,7 +52,7 @@ export default function TentangKami() {
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-1 delay-150">
                     <Card>
-                        <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
+                        <Image alt="image-1" src={'./thumb-4.webp'} width={760} height={760} className="m-auto" />
                     </Card>
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-2 delay-300">
@@ -62,12 +62,12 @@ export default function TentangKami() {
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-1 row-span-1 delay-200">
                     <Card>
-                        <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
+                        <Image alt="image-1" src={'./thumb-6.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
                 </MoveUpReveal>
                 <MoveUpReveal className="flex col-span-2 row-span-1 delay-250">
                     <Card>
-                        <Image alt="image-1" src={'./thumb-7.webp'} width={760} height={760} className="m-auto" />
+                        <Image alt="image-1" src={'./thumb-7.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
                 </MoveUpReveal>
             </div>

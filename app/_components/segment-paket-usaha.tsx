@@ -15,33 +15,37 @@ const onClick = (message: string) => {
 
 const itemPaketUsaha: ItemPackages[] = [
     {
-        name: 'Standard',
+        name: 'Basic',
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
         // price: 'Rp5.000.000',
-        price: 'TBA',
-        // caption: 'Beli',
-        caption: 'Hubungi',
+        price: 'Rp17.000.000',
+        caption: 'Beli',
+        // caption: 'Hubungi',
         image: './cart.png',
-        onClick
+        onClick: () => {
+            window.open('https://wa.me/message/EU2TRMLX3TJYN1')
+        }
     },
+    // {
+    //     name: 'Premium',
+    //     description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
+    //     // price: 'Rp8.000.000',
+    //     price: 'TBA',
+    //     // caption: 'Beli',
+    //     caption: 'Hubungi',
+    //     image: './cart.png',
+    //     onClick
+    // },
     {
-        name: 'Premium',
-        description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
-        // price: 'Rp8.000.000',
-        price: 'TBA',
-        // caption: 'Beli',
-        caption: 'Hubungi',
-        image: './cart.png',
-        onClick
-    },
-    {
-        name: 'Extended',
+        name: 'Custom',
         description: 'Paket usaha premium dengan tambahan yang bisa disesuaikan dengan keinginan anda.',
-        // price: 'Dapatkan penawaran',
-        price: 'TBA',
+        price: 'Dapatkan penawaran',
+        // price: 'TBA',
         caption: 'Hubungi',
         image: 'cart.png',
-        onClick
+        onClick: () => {
+            window.open('https://wa.me/message/EU2TRMLX3TJYN1')
+        }
     },
 ]
 
@@ -54,7 +58,7 @@ export default function PaketUsaha() {
             </div>
         </Parallax>
         <div className="py-16 md:py-32 flex flex-col gap-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-8 gap-4 px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 py-8 gap-4 px-8">
                 {itemPaketUsaha.map((item, index) => (
                     <MoveUpReveal style={{
                         transitionDelay: `${index * 50}ms`,

@@ -100,7 +100,7 @@ export default function Kemitraan() {
                     </div>
                 </MoveUpReveal>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-8">
                 {highlights.map((item, index) => (
                     <MoveUpReveal className={`delay-${index + 1}00`} key={index}>
                         <CardHighlights {...item} />
