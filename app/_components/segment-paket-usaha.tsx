@@ -3,6 +3,7 @@ import ItemPackagesCard from "./card-item-packages";
 import { MoveUpReveal } from "./component-move-up-reveal-item";
 import { ItemPackages } from "@/types";
 import { addToast } from "@heroui/toast";
+import { RevealText } from "./component-reveal-text";
 
 const onClick = (message: string) => {
     addToast({
@@ -15,9 +16,10 @@ const onClick = (message: string) => {
 
 const itemPaketUsaha: ItemPackages[] = [
     {
-        name: 'Basic',
+        name: 'Standard',
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
         // price: 'Rp5.000.000',
+        originalPrice: 'Rp20.000.000',
         price: 'Rp17.500.000',
         caption: 'Beli',
         // caption: 'Hubungi',
@@ -58,6 +60,17 @@ export default function PaketUsaha() {
             </div>
         </Parallax>
         <div className="py-16 md:py-32 flex flex-col gap-8">
+            <div className="flex mx-8">
+                <MoveUpReveal className="flex-1 delay-150">
+                    <div className="transition-all mx-10 md:mx-20 text-center font-semibold text-2xl md:text-4xl leading-10 md:leading-12">
+                        <RevealText
+                            text="Peluang kemitraan AGEMON"
+                            startDelay={0}
+                            step={25}
+                        />
+                    </div>
+                </MoveUpReveal>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 py-8 gap-4 px-8">
                 {itemPaketUsaha.map((item, index) => (
                     <MoveUpReveal style={{

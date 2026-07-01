@@ -76,9 +76,10 @@ const itemVarian: ItemVariants[] = [
 
 const itemPaketUsaha: ItemPackages[] = [
     {
-        name: 'Basic',
+        name: 'Standard',
         description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
         // price: 'Rp5.000.000',
+        originalPrice: 'Rp20.000.000',
         price: 'Rp17.500.000',
         caption: 'Beli',
         // caption: 'Hubungi',

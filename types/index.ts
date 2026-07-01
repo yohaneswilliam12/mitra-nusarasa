@@ -24,6 +24,7 @@ export interface ItemVariants {
 export interface ItemPackages {
   name: string
   description: string
+  originalPrice?: string
   price: string
   caption: string
   image: string

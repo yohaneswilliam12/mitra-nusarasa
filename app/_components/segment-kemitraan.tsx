@@ -8,7 +8,6 @@ import { Button } from "@heroui/button"
 import * as LucideReact from 'lucide-react';
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
-import { addToast } from "@heroui/toast"
 import Link from "next/link"
 
 interface CardHighlights {
@@ -21,47 +20,89 @@ interface CardHighlights {
 
 const highlights: CardHighlights[] = [
     {
-        icon: 'Video',
-        label: 'Promosi Opening',
-        description: 'Promosi pembukaan gratis untuk menarik pelanggan pertama Anda',
-        color: 'rgb(249,78,40)',
-        colorDark: 'rgb(220,68,40)'
-    },
-    {
-        icon: 'MapPin',
-        label: 'Analisa Lokasi',
-        description: 'Bantuan pemilihan lokasi penjualan strategis',
-        color: 'rgb(149,78,255)',
-        colorDark: 'rgb(220,68,255)'
-    },
-    {
-        icon: 'Image',
-        label: 'Pemasaran Digital',
-        description: 'Akses akun resmi yang mudah dijangkau calon pelanggan',
+        icon: 'ThumbsUp',
+        label: 'Konsep Kekinian',
+        description: 'Roti sando goreng premium dengan cita rasa yang digemari semua kalangan',
         color: 'rgb(48,178,252)',
         colorDark: 'rgb(10,160,254)',
     },
     {
-        icon: 'Book',
-        label: 'Penulisan Resep',
-        description: 'Pembagian resep ketika menu baru sudah tersedia',
-        color: 'rgb(247,131,32)',
-        colorDark: 'rgb(255,191,12)',
-    },
-    {
-        icon: 'Phone',
-        label: 'Konsultasi',
-        description: 'Konsultasi via telepon/WA gratis dengan tim kami',
+        icon: 'Cog',
+        label: 'Operasional Mudah',
+        description: 'Proses sederhana, tidak membutuhkan banyak karyawan',
         color: 'rgb(85,137,97)',
         colorDark: 'rgb(85,255,120)',
     },
     {
-        icon: 'Store',
-        label: 'Subsidi Event',
-        description: 'Dukungan untuk mengikuti festival/event makanan',
+        icon: 'ChartColumnIncreasing',
+        label: 'Potensi Keuntungan Menarik',
+        description: 'Harga jual terjangkau, margin keuntungan tinggi',
         color: 'rgb(247,131,32)',
         colorDark: 'rgb(255,191,12)',
     },
+    {
+        icon: 'Store',
+        label: 'Fleksibel',
+        description: 'Cocok untuk mall, event, bazaar, street food, hingga naiko',
+        color: 'rgb(149,78,255)',
+        colorDark: 'rgb(220,68,255)'
+    },
+    {
+        icon: 'Users',
+        label: 'Cocok Untuk Semua Orang',
+        description: 'Pemula maupun pebisnis berpengalaman bisa sukses bersama AGEMON',
+        color: 'rgb(247,131,32)',
+        colorDark: 'rgb(255,191,12)',
+    },
+    {
+        icon: 'Heart',
+        label: 'Branding Kuat & Menarik',
+        description: 'Desain stand modern, warna mencolok, mudah menarik perhatian pelanggan',
+        color: 'rgb(249,78,40)',
+        colorDark: 'rgb(220,68,40)'
+    },
+    // {
+    //     icon: 'Video',
+    //     label: 'Promosi Opening',
+    //     description: 'Promosi pembukaan gratis untuk menarik pelanggan pertama Anda',
+    //     color: 'rgb(249,78,40)',
+    //     colorDark: 'rgb(220,68,40)'
+    // },
+    // {
+    //     icon: 'MapPin',
+    //     label: 'Analisa Lokasi',
+    //     description: 'Bantuan pemilihan lokasi penjualan strategis',
+    //     color: 'rgb(149,78,255)',
+    //     colorDark: 'rgb(220,68,255)'
+    // },
+    // {
+    //     icon: 'Image',
+    //     label: 'Pemasaran Digital',
+    //     description: 'Akses akun resmi yang mudah dijangkau calon pelanggan',
+    //     color: 'rgb(48,178,252)',
+    //     colorDark: 'rgb(10,160,254)',
+    // },
+    // {
+    //     icon: 'Book',
+    //     label: 'Penulisan Resep',
+    //     description: 'Pembagian resep ketika menu baru sudah tersedia',
+    //     color: 'rgb(247,131,32)',
+    //     colorDark: 'rgb(255,191,12)',
+    // },
+    // {
+    //     icon: 'Phone',
+    //     label: 'Konsultasi',
+    //     description: 'Konsultasi via telepon/WA gratis dengan tim kami',
+    //     color: 'rgb(85,137,97)',
+    //     colorDark: 'rgb(85,255,120)',
+    // },
+    // {
+    //     icon: 'Store',
+    //     label: 'Subsidi Event',
+    //     description: 'Dukungan untuk mengikuti festival/event makanan',
+    //     color: 'rgb(247,131,32)',
+    //     colorDark: 'rgb(255,191,12)',
+    // },
 ]
 
 const CardHighlights = (props: CardHighlights) => {
@@ -93,7 +134,7 @@ export default function Kemitraan() {
                 <MoveUpReveal className="flex-1 delay-150">
                     <div className="transition-all mx-10 md:mx-20 text-center font-semibold text-2xl md:text-4xl leading-10 md:leading-12">
                         <RevealText
-                            text="Kemitraan untuk Pertumbuhan Bersama"
+                            text="Kenapa memilih AGEMON?"
                             startDelay={0}
                             step={25}
                         />
