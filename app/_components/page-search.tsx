@@ -99,7 +99,7 @@ const itemPaketUsaha: ItemPackages[] = [
     // },
     {
         name: 'Custom',
-        description: 'Paket usaha premium dengan tambahan yang bisa disesuaikan dengan keinginan anda.',
+        description: 'Paket usaha yang bisa disesuaikan dengan keinginan anda.',
         price: 'Dapatkan penawaran',
         caption: 'Hubungi',
         image: 'cart.png',
