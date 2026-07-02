@@ -1,7 +1,7 @@
 "use client"
 
 import { Parallax } from "react-scroll-parallax"
-import { MoveUpReveal } from "./component-move-up-reveal-item"
+import { MoveReveal } from "./component-move-reveal-item"
 import { RevealText } from "./component-reveal-text"
 import { Card } from "@heroui/card"
 import Image from "next/image"
@@ -10,7 +10,7 @@ export default function TentangKami() {
     return <div className="w-full py-8">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
-                <MoveUpReveal className="delay-100">Tentang Kami</MoveUpReveal>
+                <MoveReveal direction="up" className="delay-100">Tentang Kami</MoveReveal>
             </div>
         </Parallax>
         <div className="transition-all mx-10 md:mx-20 text-center text-2xl md:text-4xl leading-10 md:leading-12 py-16 md:py-32">
@@ -35,41 +35,41 @@ export default function TentangKami() {
                 />
             </div>
             <div className="transition-all col-span-5 grid grid-cols-4 gap-2 sm:gap-4">
-                <MoveUpReveal className="flex col-span-2 row-span-2">
+                <MoveReveal direction="up" className="flex col-span-2 row-span-2">
                     <Card>
                         <Image alt="image-1" src={'./thumb-1.png'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-1 row-span-1 delay-50">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-1 row-span-1 delay-50">
                     <Card>
                         <Image alt="image-1" src={'./thumb-2.png'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-1 row-span-1 delay-100">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-1 row-span-1 delay-100">
                     <Card>
                         <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-1 row-span-1 delay-150">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-1 row-span-1 delay-150">
                     <Card>
                         <Image alt="image-1" src={'./thumb-4.webp'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-1 row-span-2 delay-300">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-1 row-span-2 delay-300">
                     <Card>
                         <Image alt="image-1" src={'./placeholder.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-1 row-span-1 delay-200">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-1 row-span-1 delay-200">
                     <Card>
                         <Image alt="image-1" src={'./thumb-6.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
-                <MoveUpReveal className="flex col-span-2 row-span-1 delay-250">
+                </MoveReveal>
+                <MoveReveal direction="up" className="flex col-span-2 row-span-1 delay-250">
                     <Card>
                         <Image alt="image-1" src={'./thumb-7.jpg'} width={760} height={760} className="m-auto" />
                     </Card>
-                </MoveUpReveal>
+                </MoveReveal>
             </div>
         </div>
 

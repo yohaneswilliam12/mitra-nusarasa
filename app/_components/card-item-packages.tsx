@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
+import { Link } from "@heroui/link";
 
 const ItemPackagesCard = (props: ItemPackages) => {
     const { resolvedTheme } = useTheme();
@@ -35,7 +36,7 @@ const ItemPackagesCard = (props: ItemPackages) => {
                 <div className="h-7" />
             )}
             <p className="text-lg md:text-2xl font-bold">{props.price}</p>
-            <Button color="danger" variant="solid" size="lg" className="text-large font-bold bg-[rgb(255,58,65)]" onPress={() => props.onClick(props.caption)}>{props.caption}</Button>
+            <Link href={props.href} className="flex"><Button color="danger" variant="solid" size="lg" className="text-large flex-1 font-bold bg-[rgb(255,58,65)]">{props.caption}</Button></Link>
         </div>
     </Card>
 }

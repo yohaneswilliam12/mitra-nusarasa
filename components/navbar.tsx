@@ -62,7 +62,7 @@ export const Navbar = () => {
         if ((e.key.toLowerCase() === 'enter')) {
           setOpen(false);
           inputRef.current?.value.length ?
-            router.push(`./search?keyword=${inputRef.current?.value}`)
+            router.push(`/search?keyword=${inputRef.current?.value}`)
             : router.push(`/`)
         }
       }
@@ -131,7 +131,7 @@ export const Navbar = () => {
               : window.history.replaceState(null, '', '/');
             setHash('');
           }}>
-            <div style={{ backgroundImage: `url(./logo.webp)` }} className="w-[80px] h-[28px] bg-contain bg-no-repeat pointer-events-none select-none inline-block" />
+            <div style={{ backgroundImage: `url(/logo.webp)` }} className="w-[80px] h-[28px] bg-contain bg-no-repeat pointer-events-none select-none inline-block" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -140,13 +140,13 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  item.href.replace('./#', '') === hash ? "text-primary font-medium" : "",
+                  item.href.replace('/#', '') === hash ? "text-primary font-medium" : "",
                 )}
                 color="foreground"
                 href={item.href}
                 onClick={() => {
-                  item.href.startsWith('./#') ?
-                    setHash(item.href.replace('./#', ''))
+                  item.href.startsWith('/#') ?
+                    setHash(item.href.replace('/#', ''))
                     : setHash('')
                 }}
               >
@@ -189,12 +189,12 @@ export const Navbar = () => {
               <Link
                 onClick={() => {
                   setOpen(false)
-                  item.href.startsWith('./#') ?
-                    setHash(item.href.replace('./#', ''))
+                  item.href.startsWith('/#') ?
+                    setHash(item.href.replace('/#', ''))
                     : setHash('')
                 }}
                 color={
-                  item.href.replace('./#', '') === hash ? "primary" : "foreground"
+                  item.href.replace('/#', '') === hash ? "primary" : "foreground"
                 }
                 href={item.href}
                 size="lg"

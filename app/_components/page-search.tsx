@@ -1,7 +1,7 @@
 "use client"
 
 import { ItemPackages, ItemVariants } from "@/types"
-import { MoveUpReveal } from "./component-move-up-reveal-item"
+import { MoveReveal } from "./component-move-reveal-item"
 import ItemVariantCard from "./card-item-variants"
 import { Parallax } from "react-scroll-parallax"
 import { useSearchParams } from "next/navigation"
@@ -127,27 +127,27 @@ const SearchPage = () => {
     return <div className="w-full my-16">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-xl lg:text-3xl my-8">
-                <MoveUpReveal className="delay-100">Pencarian untuk &quot;{keyword}&quot;</MoveUpReveal>
+                <MoveReveal direction="up" className="delay-100">Pencarian untuk &quot;{keyword}&quot;</MoveReveal>
             </div>
         </Parallax>
         {filteredVariant.length == 0 && filteredPartnership.length == 0 ?
             <div className="text-md lg:text-xl py-8 lg:py-16">
-                <MoveUpReveal className="flex justify-center delay-200 my-32 lg:my-40">Data tidak ditemukan</MoveUpReveal>
+                <MoveReveal direction="up" className="flex justify-center delay-200 my-32 lg:my-40">Data tidak ditemukan</MoveReveal>
             </div>
             :
             <>
                 {filteredVariant.length > 0 &&
                     <>
                         <div className="flex justify-center font-bold text-lg lg:text-2xl my-8">
-                            <MoveUpReveal className="delay-100">Varian</MoveUpReveal>
+                            <MoveReveal direction="up" className="delay-100">Varian</MoveReveal>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-8 gap-4 px-8">
                             {filteredVariant.map((item, index) =>
-                                <MoveUpReveal style={{
+                                <MoveReveal direction="up" style={{
                                     transitionDelay: `${index * 50}ms`,
                                 }} key={index}>
                                     <ItemVariantCard {...item} />
-                                </MoveUpReveal>
+                                </MoveReveal>
                             )}
                         </div>
                     </>
@@ -156,15 +156,15 @@ const SearchPage = () => {
                 {filteredPartnership.length > 0 &&
                     <>
                         <div className="flex justify-center font-bold text-lg lg:text-2xl my-8">
-                            <MoveUpReveal className="delay-100">Paket Usaha</MoveUpReveal>
+                            <MoveReveal direction="up" className="delay-100">Paket Usaha</MoveReveal>
                         </div>
                         <div className="grid sm:grid-cols-2 md:grid-cols-3 py-8 gap-4 px-8">
                             {filteredPartnership.map((item, index) =>
-                                <MoveUpReveal style={{
+                                <MoveReveal direction="up" style={{
                                     transitionDelay: `${index * 50}ms`,
                                 }} key={index}>
                                     <ItemPackagesCard {...item} />
-                                </MoveUpReveal>
+                                </MoveReveal>
                             )}
                         </div>
                     </>

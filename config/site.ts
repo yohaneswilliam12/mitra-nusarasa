@@ -7,23 +7,23 @@ export const siteConfig = {
   navItems: [
     {
       label: "Beranda",
-      href: "./#beranda",
+      href: "/#beranda",
     },
     {
       label: "Paket Usaha",
-      href: "./#paket-usaha",
+      href: "/#paket-usaha",
     },
     {
       label: "Varian",
-      href: "./#varian",
+      href: "/#varian",
     },
     {
       label: "Kemitraan",
-      href: "./#kemitraan",
+      href: "/#kemitraan",
     },
     {
       label: "Tentang Kami",
-      href: "./#tentang-kami",
+      href: "/#tentang-kami",
     },
   ]
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import ItemVariantCard from "@/app/_components/card-item-variants";
-import { MoveUpReveal } from "@/app/_components/component-move-up-reveal-item";
+import { MoveReveal } from "@/app/_components/component-move-reveal-item";
 import { ItemVariants } from "@/types";
 import { Parallax } from "react-scroll-parallax";
 
@@ -67,16 +67,16 @@ export default function Varian() {
     return <div className="w-full my-16">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
-                <MoveUpReveal className="delay-100">Varian</MoveUpReveal>
+                <MoveReveal direction="up" className="delay-100">Varian</MoveReveal>
             </div>
         </Parallax>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-8 gap-4 px-8">
             {itemVarian.map((item, index) => (
-                <MoveUpReveal style={{
+                <MoveReveal direction="up" style={{
                     transitionDelay: `${index * 50}ms`,
                 }} key={index}>
                     <ItemVariantCard {...item} />
-                </MoveUpReveal>
+                </MoveReveal>
             ))}
         </div>
     </div>
