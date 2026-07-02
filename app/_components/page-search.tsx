@@ -84,9 +84,7 @@ const itemPaketUsaha: ItemPackages[] = [
         caption: 'Beli',
         // caption: 'Hubungi',
         image: './cart.png',
-        onClick: () => {
-            window.open('https://wa.me/message/EU2TRMLX3TJYN1')
-        }
+        href: '/partnership/standard'
     },
     // {
     //     name: 'Premium',
@@ -102,13 +100,13 @@ const itemPaketUsaha: ItemPackages[] = [
         name: 'Custom',
         description: 'Paket usaha yang bisa disesuaikan dengan keinginan anda.',
         price: 'Dapatkan penawaran',
+        // price: 'TBA',
         caption: 'Hubungi',
         image: 'cart.png',
-        onClick: () => {
-            window.open('https://wa.me/message/EU2TRMLX3TJYN1')
-        }
+        href: 'https://wa.me/message/EU2TRMLX3TJYN1'
     },
 ]
+
 const SearchPage = () => {
     const searchParams = useSearchParams();
     const keyword = (searchParams.get("keyword") ?? "").toLowerCase().trim();

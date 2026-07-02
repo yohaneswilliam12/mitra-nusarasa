@@ -4,7 +4,6 @@ import { MoveReveal } from "./component-move-reveal-item";
 import { ItemPackages } from "@/types";
 import { addToast } from "@heroui/toast";
 import { RevealText } from "./component-reveal-text";
-import { useRouter } from "next/navigation";
 
 const onClick = (message: string) => {
     addToast({
@@ -15,40 +14,41 @@ const onClick = (message: string) => {
     })
 }
 
+const itemPaketUsaha: ItemPackages[] = [
+    {
+        name: 'Standard',
+        description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
+        // price: 'Rp5.000.000',
+        originalPrice: 'Rp20.000.000',
+        price: 'Rp17.500.000',
+        caption: 'Beli',
+        // caption: 'Hubungi',
+        image: './cart.png',
+        href: '/partnership/standard'
+    },
+    // {
+    //     name: 'Premium',
+    //     description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
+    //     // price: 'Rp8.000.000',
+    //     price: 'TBA',
+    //     // caption: 'Beli',
+    //     caption: 'Hubungi',
+    //     image: './cart.png',
+    //     onClick
+    // },
+    {
+        name: 'Custom',
+        description: 'Paket usaha yang bisa disesuaikan dengan keinginan anda.',
+        price: 'Dapatkan penawaran',
+        // price: 'TBA',
+        caption: 'Hubungi',
+        image: 'cart.png',
+        href: 'https://wa.me/message/EU2TRMLX3TJYN1'
+    },
+]
+
 export default function PaketUsaha() {
-    const router = useRouter();
-    const itemPaketUsaha: ItemPackages[] = [
-        {
-            name: 'Standard',
-            description: 'Paket standar yang menyediakan peralatan minimum untuk bisa berjualan.',
-            // price: 'Rp5.000.000',
-            originalPrice: 'Rp20.000.000',
-            price: 'Rp17.500.000',
-            caption: 'Beli',
-            // caption: 'Hubungi',
-            image: './cart.png',
-            href: '/partnership/standard'
-        },
-        // {
-        //     name: 'Premium',
-        //     description: 'Paket usaha yang lebih lengkap untuk berjualan lebih mudah dan menarik.',
-        //     // price: 'Rp8.000.000',
-        //     price: 'TBA',
-        //     // caption: 'Beli',
-        //     caption: 'Hubungi',
-        //     image: './cart.png',
-        //     onClick
-        // },
-        {
-            name: 'Custom',
-            description: 'Paket usaha yang bisa disesuaikan dengan keinginan anda.',
-            price: 'Dapatkan penawaran',
-            // price: 'TBA',
-            caption: 'Hubungi',
-            image: 'cart.png',
-            href: 'https://wa.me/message/EU2TRMLX3TJYN1'
-        },
-    ]
+
     return <div className="w-full">
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
