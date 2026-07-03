@@ -15,13 +15,13 @@ export default function Standard() {
     useEffect(() => {
         setLoaded(true);
     }, []);
-    return <div className="w-full">
+    return <div className="w-full mb-16">
         <div className="flex">
             <MoveReveal direction="left"><Link href="/#paket-usaha"><Button variant="light"><ChevronLeft /></Button></Link></MoveReveal>
         </div>
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl mb-8">
-                <MoveReveal direction="up" className="delay-0">Kemitraan</MoveReveal>
+                <MoveReveal direction="up" className="delay-100">Kemitraan</MoveReveal>
             </div>
         </Parallax>
         <div className="flex flex-col gap-8">
@@ -30,7 +30,7 @@ export default function Standard() {
                     <div className="transition-all mx-10 md:mx-20 text-center font-semibold text-2xl md:text-4xl leading-10 md:leading-12">
                         <RevealText
                             text="Standard"
-                            startDelay={0}
+                            startDelay={200}
                             step={25}
                         />
                     </div>

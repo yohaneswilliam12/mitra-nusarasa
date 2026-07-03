@@ -7,6 +7,9 @@ import { Parallax } from "react-scroll-parallax"
 import { useSearchParams } from "next/navigation"
 import ItemPackagesCard from "./card-item-packages"
 import { addToast } from "@heroui/toast"
+import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
+import { Button } from "@heroui/button"
 
 const onClick = (message: string) => {
     addToast({
@@ -122,9 +125,12 @@ const SearchPage = () => {
 
         return name.includes(keyword) || description.includes(keyword) || 'partnership'.startsWith(keyword)
     })
-    return <div className="w-full my-16">
+    return <div className="w-full mb-16">
+        <div className="flex">
+            <MoveReveal direction="left"><Link href="/#paket-usaha"><Button variant="light"><ChevronLeft /></Button></Link></MoveReveal>
+        </div>
         <Parallax speed={-2}>
-            <div className="flex justify-center font-bold text-xl lg:text-3xl my-8">
+            <div className="flex justify-center font-bold text-xl lg:text-3xl mb-8">
                 <MoveReveal direction="up" className="delay-100">Pencarian untuk &quot;{keyword}&quot;</MoveReveal>
             </div>
         </Parallax>

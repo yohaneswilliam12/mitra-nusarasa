@@ -3,7 +3,10 @@
 import ItemVariantCard from "@/app/_components/card-item-variants";
 import { MoveReveal } from "@/app/_components/component-move-reveal-item";
 import { ItemVariants } from "@/types";
+import { Button } from "@heroui/button";
+import { ChevronLeft } from "lucide-react";
 import { Parallax } from "react-scroll-parallax";
+import Link from "next/link"
 
 const itemVarian: ItemVariants[] = [
     {
@@ -64,9 +67,12 @@ const itemVarian: ItemVariants[] = [
 
 
 export default function Varian() {
-    return <div className="w-full my-16">
+    return <div className="w-full mb-16">
+        <div className="flex">
+            <MoveReveal direction="left"><Link href="/#paket-usaha"><Button variant="light"><ChevronLeft /></Button></Link></MoveReveal>
+        </div>
         <Parallax speed={-2}>
-            <div className="flex justify-center font-bold text-3xl lg:text-5xl my-8">
+            <div className="flex justify-center font-bold text-3xl lg:text-5xl mb-8">
                 <MoveReveal direction="up" className="delay-100">Varian</MoveReveal>
             </div>
         </Parallax>
