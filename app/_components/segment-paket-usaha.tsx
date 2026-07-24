@@ -1,9 +1,10 @@
 import { Parallax } from "react-scroll-parallax";
-import ItemPackagesCard from "./card-item-packages";
+// import ItemPackagesCard from "./card-item-packages";
 import { MoveReveal } from "./component-move-reveal-item";
 import { ItemPackages } from "@/types";
 import { addToast } from "@heroui/toast";
 import { RevealText } from "./component-reveal-text";
+import Standard from "../_partnership/standard/_components/standard";
 
 const onClick = (message: string) => {
     addToast({
@@ -55,7 +56,7 @@ export default function PaketUsaha() {
                 <MoveReveal direction="up" className="delay-100">Paket Usaha</MoveReveal>
             </div>
         </Parallax>
-        <div className="py-16 md:py-32 flex flex-col gap-8">
+        <div className="py-16 md:py-8 flex flex-col gap-8">
             <div className="flex mx-8">
                 <MoveReveal direction="up" className="flex-1 delay-150">
                     <div className="transition-all mx-10 md:mx-20 text-center font-semibold text-2xl md:text-4xl leading-10 md:leading-12">
@@ -67,14 +68,15 @@ export default function PaketUsaha() {
                     </div>
                 </MoveReveal>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 py-8 gap-4 px-8">
-                {itemPaketUsaha.map((item, index) => (
+            <div className="grid grid-cols-1 py-8 gap-4 px-8">
+                <Standard />
+                {/* {itemPaketUsaha.map((item, index) => (
                     <MoveReveal direction="up" style={{
                         transitionDelay: `${index * 50}ms`,
                     }} key={index}>
                         <ItemPackagesCard {...item} />
                     </MoveReveal>
-                ))}
+                ))} */}
             </div>
         </div>
     </div>

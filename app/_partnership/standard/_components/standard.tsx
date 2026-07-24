@@ -1,10 +1,11 @@
 "use client";
 
 import { MoveReveal } from "@/app/_components/component-move-reveal-item";
-import { RevealText } from "@/app/_components/component-reveal-text";
+// import { RevealText } from "@/app/_components/component-reveal-text";
 import { Reveal } from "@/components/reveal-item";
 import { Button } from "@heroui/button";
-import { Check, ChevronLeft } from "lucide-react";
+import { Check } from "lucide-react";
+// import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
@@ -12,20 +13,22 @@ import Link from "next/link"
 
 export default function Standard() {
     const [loaded, setLoaded] = useState(false);
+    const price = "Rp17.500.000";
+    const originalPrice = "Rp20.000.000";
     useEffect(() => {
         setLoaded(true);
     }, []);
-    return <div className="w-full mb-16">
-        <div className="flex">
+    return <div className="w-full">
+        {/* <div className="flex">
             <MoveReveal direction="left"><Link href="/#paket-usaha"><Button variant="light"><ChevronLeft /></Button></Link></MoveReveal>
-        </div>
+        </div> */}
         <Parallax speed={-2}>
             <div className="flex justify-center font-bold text-3xl lg:text-5xl mb-8">
                 <MoveReveal direction="up" className="delay-100">Kemitraan</MoveReveal>
             </div>
         </Parallax>
         <div className="flex flex-col gap-8">
-            <div className="flex mx-8">
+            {/* <div className="flex mx-8">
                 <MoveReveal direction="up" className="flex-1 delay-100">
                     <div className="transition-all mx-10 md:mx-20 text-center font-semibold text-2xl md:text-4xl leading-10 md:leading-12">
                         <RevealText
@@ -35,14 +38,14 @@ export default function Standard() {
                         />
                     </div>
                 </MoveReveal>
-            </div>
-            <div className="lg:flex gap-8 mt-2 mb-32">
+            </div> */}
+            <div className="lg:flex gap-8 mt-2">
                 <div className="lg:w-[70%]">
                     <Reveal>
                         <Image src="/partnership/standard.webp" alt="standard-package" width={1000} height={1000} className={`transition-all duration-500 ${loaded ? 'scale-100' : 'scale-110'}`} />
                     </Reveal>
                 </div>
-                <div className="mx-8 my-16 lg:m-0">
+                <div className="mx-8 mt-16 lg:m-0">
                     <div className="flex">
                         <MoveReveal direction="up">
                             <ul className="flex flex-col gap-2">
@@ -56,8 +59,12 @@ export default function Standard() {
                             </ul>
                         </MoveReveal>
                     </div>
-                    <div className="flex my-16">
+                    <div className="flex my-8 sm:my-16">
                         <MoveReveal direction="up" className="delay-450">
+                            <div className="pb-2">
+                                <p className="text-md md:text-lg line-through text-default-500">{originalPrice}</p>
+                                <p className="text-lg md:text-2xl font-bold">{price}</p>
+                            </div>
                             <Reveal><Link href={"https://wa.me/message/EU2TRMLX3TJYN1"}><Button color="danger" variant="solid" size="lg" className="text-large font-bold bg-[rgb(255,58,65)]">Hubungi kami</Button></Link></Reveal>
                         </MoveReveal>
                     </div>
